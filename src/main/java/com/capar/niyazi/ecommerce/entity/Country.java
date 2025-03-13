@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.util.List;
 
 @Entity
@@ -22,6 +23,7 @@ public class Country {
     @Column(name = "name")
     private String name;
 
+    // Ignore the states when returning JSON.
     @OneToMany(mappedBy = "country")
     @JsonIgnore
     private List<State> states;
