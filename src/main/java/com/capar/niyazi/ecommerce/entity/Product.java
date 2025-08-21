@@ -19,6 +19,10 @@ public class Product {
     @Column(name = "id")
     private Long id;
 
+    /*
+     * In a bidirectional relationship, only one side owns the association (the one with the foreign key column).
+     * The owning side is where you put @JoinColumn.
+     */
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     private ProductCategory category;
