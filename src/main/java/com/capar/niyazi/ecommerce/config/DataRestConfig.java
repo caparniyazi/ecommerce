@@ -1,9 +1,6 @@
 package com.capar.niyazi.ecommerce.config;
 
-import com.capar.niyazi.ecommerce.entity.Country;
-import com.capar.niyazi.ecommerce.entity.Product;
-import com.capar.niyazi.ecommerce.entity.ProductCategory;
-import com.capar.niyazi.ecommerce.entity.State;
+import com.capar.niyazi.ecommerce.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +33,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(ProductCategory.class, config, theUnsupportedMethods);
         disableHttpMethods(Country.class, config, theUnsupportedMethods);
         disableHttpMethods(State.class, config, theUnsupportedMethods);
+        disableHttpMethods(City.class, config, theUnsupportedMethods);
 
         exposeIds(config);
     }

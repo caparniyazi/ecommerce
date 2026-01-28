@@ -27,4 +27,11 @@ public class Country {
     @OneToMany(mappedBy = "country")
     @JsonIgnore
     private List<State> states;
+
+    // Ignore the cities when returning JSON.
+    // The value of mappedBy is the name of the association-mapping attribute on the owning side.
+    // With this, we have now established a bidirectional association between our Country and City entities.
+    @OneToMany(mappedBy = "country")
+    @JsonIgnore
+    private List<City> cities;
 }
